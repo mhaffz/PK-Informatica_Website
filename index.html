@@ -8,6 +8,7 @@
     <meta name="description"
         content="Ajudamos a fazer seu negócio crescer com soluções em TI inovadoras e equipamentos de alta tecnologia.">
 
+    <link rel="shortcut icon" href="/img/favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -706,6 +707,7 @@
         }
 
         @media (max-width: 768px) {
+
             .nav-links,
             .nav-action {
                 display: none;
@@ -762,16 +764,46 @@
                 width: 100%;
             }
 
+            .contact-info {
+                text-align: center;
+            }
+
+            .contact-methods {
+                align-items: center;
+            }
+
+            .method {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+
+            .method-details h4 {
+                margin-bottom: 4px;
+            }
+
+            .method-details p {
+                font-size: 16px;
+                word-spacing: normal;
+                line-height: 1.4;
+            }
+
             .contact-form {
-                padding: 32px 24px;
+                padding: 32px 20px;
+            }
+
+            .form-control {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+                margin-bottom: 6px;
             }
 
             .service-card {
                 padding: 32px 24px;
-            }
-
-            .method {
-                gap: 16px;
             }
         }
 
@@ -798,9 +830,8 @@
                 margin-top: 32px;
             }
 
-            .method-details p {
-                font-size: 16px;
-                word-spacing: normal;
+            .contact-form {
+                padding: 24px 16px;
             }
         }
     </style>
@@ -1044,7 +1075,7 @@
                     <ul class="footer-nav">
                         <li><a href="#about">Sobre nós</a></li>
                         <li><a href="#contact">Fale Conosco</a></li>
-                        <li><a href="/privacidade.html">Privacidade</a></li>
+                        <li><a href="/pages/privacidade.html">Privacidade</a></li>
                     </ul>
                 </div>
             </div>
@@ -1079,7 +1110,7 @@
         function selectService(serviceName) {
             const messageArea = document.getElementById('message');
             messageArea.value = `Gostaria de saber mais sobre: ${serviceName}.\n\n`;
-            
+
             // Scroll to contact section
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 
