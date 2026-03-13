@@ -203,9 +203,17 @@
             left: 0;
         }
 
-        .hamburger-line:nth-child(1) { top: 0; }
-        .hamburger-line:nth-child(2) { top: 6px; }
-        .hamburger-line:nth-child(3) { top: 12px; }
+        .hamburger-line:nth-child(1) {
+            top: 0;
+        }
+
+        .hamburger-line:nth-child(2) {
+            top: 6px;
+        }
+
+        .hamburger-line:nth-child(3) {
+            top: 12px;
+        }
 
         .mobile-menu-btn.active .hamburger-line:nth-child(1) {
             transform: translateY(6px) rotate(45deg);
@@ -450,6 +458,7 @@
             <a href="/index.html" class="brand">PK Informática</a>
 
             <ul class="nav-links">
+                <li><a href="/index.html">Início</a></li>
                 <li><a href="/index.html#services">Serviços</a></li>
                 <li><a href="/index.html#about">Sobre a Empresa</a></li>
                 <li><a href="/index.html#contact">Contato</a></li>
@@ -475,7 +484,8 @@
                 <i data-lucide="calendar" style="width: 18px;"></i>
                 Última atualização: 15/01/2026
             </div>
-            <p class="reveal" style="max-width: 600px; margin: 24px auto 0; font-size: 1.15rem; color: var(--text-muted); transition-delay: 300ms;">
+            <p class="reveal"
+                style="max-width: 600px; margin: 24px auto 0; font-size: 1.15rem; color: var(--text-muted); transition-delay: 300ms;">
                 Como tratamos as informações necessárias para fornecer uma plataforma de comunicação corporativa
                 integrada ao WhatsApp.
             </p>
@@ -520,7 +530,8 @@
             </p>
 
             <h2 class="reveal">3) Quais dados o TalkBubble trata</h2>
-            <p class="reveal">Para viabilizar a integração e o atendimento via API Oficial do WhatsApp, o TalkBubble trata, dentro do
+            <p class="reveal">Para viabilizar a integração e o atendimento via API Oficial do WhatsApp, o TalkBubble
+                trata, dentro do
                 ambiente do Cliente, os seguintes dados:</p>
             <ul class="reveal">
                 <li><strong>Dados de contato do WhatsApp:</strong> Números de telefone, nomes de perfil do WhatsApp e
@@ -551,7 +562,8 @@
             </ul>
 
             <h2 class="reveal">5) Permissões do aplicativo móvel</h2>
-            <p class="reveal">O TalkBubble pode solicitar permissões do dispositivo móvel do atendente apenas para recursos
+            <p class="reveal">O TalkBubble pode solicitar permissões do dispositivo móvel do atendente apenas para
+                recursos
                 específicos:</p>
             <ul class="reveal">
                 <li><strong>Câmera:</strong> necessário para enviar fotos ou mensagens de vídeo.</li>
@@ -568,7 +580,8 @@
                 <li>Garantir segurança e integridade do ambiente;</li>
                 <li>Suporte técnico e manutenção do ambiente, quando solicitado.</li>
             </ul>
-            <p class="reveal"><strong>O TalkBubble não utiliza dados para rastreamento (tracking) e não vende nenhuma informação
+            <p class="reveal"><strong>O TalkBubble não utiliza dados para rastreamento (tracking) e não vende nenhuma
+                    informação
                     pessoal ou lista de contatos.</strong></p>
 
             <h2 class="reveal">7) Compartilhamento</h2>
@@ -670,13 +683,13 @@
             });
         }, {
             threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px" 
+            rootMargin: "0px 0px -50px 0px"
         });
 
         revealElements.forEach(element => {
             revealObserver.observe(element);
         });
-        
+
         // Immediate reveal check
         setTimeout(() => {
             revealElements.forEach(entry => {
