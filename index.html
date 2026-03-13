@@ -91,6 +91,17 @@
             padding: 120px 0;
         }
 
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -709,7 +720,7 @@
         @media (max-width: 768px) {
 
             .nav-links {
-                display: none;
+                display: flex;
                 flex-direction: column;
                 position: absolute;
                 top: 90px;
@@ -722,10 +733,16 @@
                 border-bottom: 1px solid var(--border-color);
                 gap: 24px;
                 text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             }
 
             .nav-links.active {
-                display: flex;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
             }
 
             .nav-action {
@@ -734,6 +751,40 @@
 
             .mobile-menu-btn {
                 display: block;
+                width: 20px;
+                height: 14px;
+                position: relative;
+                z-index: 101;
+                background: none;
+                border: none;
+                padding: 0;
+            }
+
+            .hamburger-line {
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: var(--text-main);
+                position: absolute;
+                border-radius: 4px;
+                transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+                left: 0;
+            }
+
+            .hamburger-line:nth-child(1) { top: 0; }
+            .hamburger-line:nth-child(2) { top: 6px; }
+            .hamburger-line:nth-child(3) { top: 12px; }
+
+            .mobile-menu-btn.active .hamburger-line:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            .mobile-menu-btn.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active .hamburger-line:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
             }
 
             .hero {
@@ -873,7 +924,9 @@
             </div>
 
             <button class="mobile-menu-btn">
-                <i data-lucide="menu"></i>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </header>
@@ -883,16 +936,16 @@
             <div class="hero-badge">
                 <i data-lucide="zap" style="width: 16px; height: 16px;"></i> Inovação e Excelência
             </div>
-            <h1 class="hero-title">A base tecnológica para o futuro do seu negócio.</h1>
-            <p class="hero-desc">Câmeras, servidores, desenvolvimento web e suporte técnico premium. Entregamos a
+            <h1 class="hero-title reveal">A base tecnológica para o futuro do seu negócio.</h1>
+            <p class="hero-desc reveal" style="transition-delay: 100ms;">Câmeras, servidores, desenvolvimento web e suporte técnico premium. Entregamos a
                 tranquilidade e a eficiência que sua empresa precisa para escalar.</p>
 
-            <div class="hero-actions">
+            <div class="hero-actions reveal" style="transition-delay: 200ms;">
                 <a href="#services" class="btn btn-primary">Nossas Soluções</a>
                 <a href="#about" class="btn btn-outline">Conheça a PK</a>
             </div>
 
-            <div class="hero-image-wrapper">
+            <div class="hero-image-wrapper reveal" style="transition-delay: 300ms;">
                 <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1600"
                     alt="Workspace Moderno" class="hero-image">
             </div>
@@ -901,19 +954,19 @@
 
     <section class="metrics">
         <div class="container metrics-grid">
-            <div>
+            <div class="reveal">
                 <div class="metric-value">12+</div>
                 <div class="metric-label">Anos de Mercado</div>
             </div>
-            <div>
+            <div class="reveal" style="transition-delay: 100ms;">
                 <div class="metric-value">150+</div>
                 <div class="metric-label">Projetos Entregues</div>
             </div>
-            <div>
+            <div class="reveal" style="transition-delay: 200ms;">
                 <div class="metric-value">97%</div>
                 <div class="metric-label">Clientes Satisfeitos</div>
             </div>
-            <div>
+            <div class="reveal" style="transition-delay: 300ms;">
                 <div class="metric-value">24/7</div>
                 <div class="metric-label">Suporte e Atenção</div>
             </div>
@@ -922,7 +975,7 @@
 
     <section class="about" id="about">
         <div class="container about-grid">
-            <div class="about-text">
+            <div class="about-text reveal">
                 <h2>Soluções completas, sem complicações.</h2>
                 <p>Nossa missão é simples: resolver desafios complexos de TI para que você foque 100% em expandir a sua
                     empresa. Desde a infraestrutura até a presença online, a PK Informática cuida de tudo.</p>
@@ -953,20 +1006,20 @@
             </div>
 
             <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&q=80&w=1000"
-                alt="Equipe de Tecnologia" class="about-image">
+                alt="Equipe de Tecnologia" class="about-image reveal" style="transition-delay: 200ms;">
         </div>
     </section>
 
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>O que fazemos de melhor</h2>
                 <p>Abordamos cada necessidade da sua empresa com as ferramentas e metodologias mais avançadas do mercado
                     de tecnologia.</p>
             </div>
 
             <div class="services-grid">
-                <div class="service-card" onclick="window.open('https://www.talkbubble.com.br', '_blank')">
+                <div class="service-card reveal" onclick="window.open('https://www.talkbubble.com.br', '_blank')">
                     <div class="service-icon-wrapper"><i data-lucide="message-circle"></i></div>
                     <h3>TalkBubble</h3>
                     <p>Aplicativo definitivo para elevar o suporte da sua equipe e gerenciar comunicações com
@@ -974,32 +1027,32 @@
                     <div class="service-link">Visitar Site <i data-lucide="arrow-right"></i></div>
                 </div>
 
-                <div class="service-card" onclick="selectService('Desenvolvimento de Sites')">
+                <div class="service-card reveal" style="transition-delay: 100ms;" onclick="selectService('Desenvolvimento de Sites')">
                     <div class="service-icon-wrapper"><i data-lucide="monitor-smartphone"></i></div>
                     <h3>Desenvolvimento de Sites</h3>
                     <p>Experiências digitais responsivas, rápidas e projetadas minuciosamente para alta conversão.</p>
                 </div>
 
 
-                <div class="service-card" onclick="selectService('Sistemas Corporativos')">
+                <div class="service-card reveal" style="transition-delay: 200ms;" onclick="selectService('Sistemas Corporativos')">
                     <div class="service-icon-wrapper"><i data-lucide="layout-dashboard"></i></div>
                     <h3>Sistemas Corporativos</h3>
                     <p>Softwares desenvolvidos especificamente para otimizar os seus processos internos.</p>
                 </div>
 
-                <div class="service-card" onclick="selectService('Servidores & Câmeras')">
+                <div class="service-card reveal" style="transition-delay: 300ms;" onclick="selectService('Servidores & Câmeras')">
                     <div class="service-icon-wrapper"><i data-lucide="server"></i></div>
                     <h3>Servidores & Câmeras</h3>
                     <p>Instalação rigorosa de CFTV e arquitetura de servidores de alta confiabilidade.</p>
                 </div>
 
-                <div class="service-card" onclick="selectService('Tecnologia Sob Medida')">
+                <div class="service-card reveal" style="transition-delay: 400ms;" onclick="selectService('Tecnologia Sob Medida')">
                     <div class="service-icon-wrapper"><i data-lucide="code-2"></i></div>
                     <h3>Tecnologia Sob Medida</h3>
                     <p>Softwares desenvolvidos especificamente para desafios de negócio únicos.</p>
                 </div>
 
-                <div class="service-card" onclick="selectService('Equipamentos')">
+                <div class="service-card reveal" style="transition-delay: 500ms;" onclick="selectService('Equipamentos')">
                     <div class="service-icon-wrapper"><i data-lucide="hard-drive"></i></div>
                     <h3>Equipamentos</h3>
                     <p>Fornecimento de hardware premium: computadores corporativos, switches e roteadores.</p>
@@ -1010,7 +1063,7 @@
 
     <section class="contact" id="contact">
         <div class="container contact-grid">
-            <div class="contact-info">
+            <div class="contact-info reveal">
                 <h2>Inicie seu próximo projeto conosco.</h2>
                 <p>Fale diretamente com nossa equipe especializada. Estamos prontos para analisar sua estrutura e
                     desenhar o futuro operacional da sua marca.</p>
@@ -1040,7 +1093,7 @@
                 </div>
             </div>
 
-            <div class="contact-form">
+            <div class="contact-form reveal" style="transition-delay: 200ms;">
                 <form id="whatsappForm">
                     <div class="form-group">
                         <label for="name">Nome completo</label>
@@ -1146,23 +1199,46 @@
 
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
-            // Toggle icon betwen menu and x
-            const isMenuOpen = navLinks.classList.contains('active');
-            mobileMenuBtn.innerHTML = isMenuOpen 
-                ? '<i data-lucide="x"></i>' 
-                : '<i data-lucide="menu"></i>';
-            lucide.createIcons();
+            mobileMenuBtn.classList.toggle('active');
         });
 
         // Close menu on link click
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
-                lucide.createIcons();
+                mobileMenuBtn.classList.remove('active');
             });
         });
+        // Scroll Animation Observer (Reveal elements)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Stop watching it once it's revealed (if you want it to only animate once)
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1, // Trigger when 10% of element is visible
+            rootMargin: "0px 0px -50px 0px" 
+        });
+
+        // Trigger animations
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+        
+        // Ensure hero sections appear immediately if they are in viewport
+        setTimeout(() => {
+            revealElements.forEach(entry => {
+                const rect = entry.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    entry.classList.add('active');
+                }
+            });
+        }, 100);
     </script>
 </body>
 
