@@ -7,6 +7,7 @@
     <title>Política de Privacidade - TalkBubble / PK Informática</title>
     <meta name="robots" content="index,follow">
 
+    <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -99,6 +100,17 @@
             gap: 8px;
         }
 
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .btn-primary {
             background-color: var(--primary);
             color: #ffffff;
@@ -173,6 +185,38 @@
             border: none;
             cursor: pointer;
             color: var(--text-main);
+            padding: 0;
+            width: 20px;
+            height: 14px;
+            position: relative;
+            z-index: 101;
+        }
+
+        .hamburger-line {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-main);
+            position: absolute;
+            border-radius: 4px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+            left: 0;
+        }
+
+        .hamburger-line:nth-child(1) { top: 0; }
+        .hamburger-line:nth-child(2) { top: 6px; }
+        .hamburger-line:nth-child(3) { top: 12px; }
+
+        .mobile-menu-btn.active .hamburger-line:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .mobile-menu-btn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active .hamburger-line:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
         }
 
         footer {
@@ -195,29 +239,6 @@
         .footer-desc {
             max-width: 300px;
             margin-bottom: 32px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
         }
 
         .footer-title {
@@ -258,7 +279,33 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links,
+
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                padding: 32px 5%;
+                box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid var(--border-color);
+                gap: 24px;
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-20px);
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+
             .nav-action {
                 display: none;
             }
@@ -413,20 +460,22 @@
             </div>
 
             <button class="mobile-menu-btn">
-                <i data-lucide="menu"></i>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
         </div>
     </header>
 
     <div class="page-header">
         <div class="container">
-            <span class="pill">TalkBubble</span>
-            <h1>Política de Privacidade</h1>
-            <div class="date-update">
+            <span class="pill reveal">TalkBubble</span>
+            <h1 class="reveal" style="transition-delay: 100ms;">Política de Privacidade</h1>
+            <div class="date-update reveal" style="transition-delay: 200ms;">
                 <i data-lucide="calendar" style="width: 18px;"></i>
                 Última atualização: 15/01/2026
             </div>
-            <p style="max-width: 600px; margin: 24px auto 0; font-size: 1.15rem; color: var(--text-muted);">
+            <p class="reveal" style="max-width: 600px; margin: 24px auto 0; font-size: 1.15rem; color: var(--text-muted); transition-delay: 300ms;">
                 Como tratamos as informações necessárias para fornecer uma plataforma de comunicação corporativa
                 integrada ao WhatsApp.
             </p>
@@ -435,7 +484,7 @@
 
     <main class="privacy-content">
         <div class="container" style="max-width: 800px; padding: 0 20px;">
-            <div class="important-box">
+            <div class="important-box reveal">
                 <p style="margin-bottom: 0;">
                     <i data-lucide="info"
                         style="width: 20px; vertical-align: middle; margin-right: 8px; color: var(--accent);"></i>
@@ -448,32 +497,32 @@
                 </p>
             </div>
 
-            <h2>1) Quem opera o TalkBubble</h2>
-            <p>
+            <h2 class="reveal">1) Quem opera o TalkBubble</h2>
+            <p class="reveal">
                 O TalkBubble é operado por <strong>P H M FRANCO</strong>, inscrito no <strong>CNPJ
                     40.093.946/0001-64</strong>.
             </p>
-            <p>
+            <p class="reveal">
                 <strong>Contato:</strong> <a href="mailto:contato@pkinformatica.com">contato@pkinformatica.com</a>
             </p>
 
-            <h2>2) Estrutura do serviço e responsabilidades</h2>
-            <p>
+            <h2 class="reveal">2) Estrutura do serviço e responsabilidades</h2>
+            <p class="reveal">
                 O TalkBubble é disponibilizado no modelo em que cada Cliente possui um ambiente independente (instância)
                 e um banco de dados próprio.
                 Assim, o <strong>Cliente é o responsável (Controlador)</strong> pelos dados pessoais tratados naquele
                 ambiente.
             </p>
-            <p>
+            <p class="reveal">
                 A <strong>P H M FRANCO</strong> atua como <strong>fornecedora e administradora técnica</strong> do
                 ambiente, com foco em disponibilidade,
                 manutenção, atualizações e suporte operacional da infraestrutura.
             </p>
 
-            <h2>3) Quais dados o TalkBubble trata</h2>
-            <p>Para viabilizar a integração e o atendimento via API Oficial do WhatsApp, o TalkBubble trata, dentro do
+            <h2 class="reveal">3) Quais dados o TalkBubble trata</h2>
+            <p class="reveal">Para viabilizar a integração e o atendimento via API Oficial do WhatsApp, o TalkBubble trata, dentro do
                 ambiente do Cliente, os seguintes dados:</p>
-            <ul>
+            <ul class="reveal">
                 <li><strong>Dados de contato do WhatsApp:</strong> Números de telefone, nomes de perfil do WhatsApp e
                     fotos de perfil dos contatos que interagem com a empresa.</li>
                 <li><strong>Dados de conta e perfil:</strong> nome, e-mail e identificador interno do usuário
@@ -489,8 +538,8 @@
                 operador. O conteúdo permanece isolado no ambiente do próprio Cliente.
             </p>
 
-            <h2>4) Acesso a conversas e integração</h2>
-            <ul>
+            <h2 class="reveal">4) Acesso a conversas e integração</h2>
+            <ul class="reveal">
                 <li>O serviço do TalkBubble atua como uma ponte técnica entre o Cliente e a <strong>API do WhatsApp
                         (Meta)</strong>.</li>
                 <li>O TalkBubble <strong>não mantém um repositório central</strong> com o conteúdo de conversas de todos
@@ -501,29 +550,29 @@
                     pode visualizar os atendimentos conforme sua própria política interna.</li>
             </ul>
 
-            <h2>5) Permissões do aplicativo móvel</h2>
-            <p>O TalkBubble pode solicitar permissões do dispositivo móvel do atendente apenas para recursos
+            <h2 class="reveal">5) Permissões do aplicativo móvel</h2>
+            <p class="reveal">O TalkBubble pode solicitar permissões do dispositivo móvel do atendente apenas para recursos
                 específicos:</p>
-            <ul>
+            <ul class="reveal">
                 <li><strong>Câmera:</strong> necessário para enviar fotos ou mensagens de vídeo.</li>
                 <li><strong>Microfone:</strong> necessário para gravar mensagens de voz.</li>
                 <li><strong>Fotos/Arquivos:</strong> para anexar mídias e documentos em conversas.</li>
                 <li><strong>Notificações:</strong> para alertas de novas mensagens de clientes.</li>
             </ul>
 
-            <h2>6) Finalidades do tratamento</h2>
-            <p>Os dados são tratados exclusivamente para:</p>
-            <ul>
+            <h2 class="reveal">6) Finalidades do tratamento</h2>
+            <p class="reveal">Os dados são tratados exclusivamente para:</p>
+            <ul class="reveal">
                 <li>Operar a integração de mensagens com o WhatsApp Business;</li>
                 <li>Permitir a comunicação entre a empresa (Cliente) e seus consumidores finais;</li>
                 <li>Garantir segurança e integridade do ambiente;</li>
                 <li>Suporte técnico e manutenção do ambiente, quando solicitado.</li>
             </ul>
-            <p><strong>O TalkBubble não utiliza dados para rastreamento (tracking) e não vende nenhuma informação
+            <p class="reveal"><strong>O TalkBubble não utiliza dados para rastreamento (tracking) e não vende nenhuma informação
                     pessoal ou lista de contatos.</strong></p>
 
-            <h2>7) Compartilhamento</h2>
-            <ul>
+            <h2 class="reveal">7) Compartilhamento</h2>
+            <ul class="reveal">
                 <li>O TalkBubble <strong>não vende dados pessoais</strong>.</li>
                 <li>O tratamento ocorre no ambiente do Cliente e envolve o compartilhamento automático de dados de
                     mensagens com a infraestrutura da Meta (WhatsApp).</li>
@@ -531,21 +580,21 @@
                     ordem judicial válida.</li>
             </ul>
 
-            <h2>8) Retenção e exclusão</h2>
-            <p>
+            <h2 class="reveal">8) Retenção e exclusão</h2>
+            <p class="reveal">
                 A retenção de mensagens, contatos de WhatsApp, arquivos e dados de conta é definida pelo <strong>Cliente
                     (empresa contratante)</strong>, responsável pelo ambiente e banco de dados.
             </p>
 
-            <h2>9) Direitos do titular (LGPD)</h2>
-            <p>
+            <h2 class="reveal">9) Direitos do titular (LGPD)</h2>
+            <p class="reveal">
                 Como o Cliente (a empresa com a qual você conversou) é o Controlador dos dados, pedidos relacionados a
                 acesso, correção, eliminação de número de telefone, exclusão de histórico de conversas, portabilidade e
                 demais direitos devem ser direcionados diretamente à empresa de atendimento.
             </p>
 
-            <h2>10) Contato</h2>
-            <p>
+            <h2 class="reveal">10) Contato</h2>
+            <p class="reveal">
                 Para dúvidas sobre privacidade, segurança de dados ou questões técnicas relacionadas ao TalkBubble,
                 entre em contato através do e-mail:
                 <a href="mailto:contato@pkinformatica.com">contato@pkinformatica.com</a>
@@ -560,18 +609,6 @@
                     <div class="footer-brand brand">PK Informática</div>
                     <p class="footer-desc">Infraestrutura digital e hardware corporativo alinhados para o máximo de
                         performance.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
-                        <a href="#" class="social-link"><i data-lucide="instagram"></i></a>
-                        <a href="https://wa.me/5569992310257" target="_blank" class="social-link" title="WhatsApp">
-                            <svg width="24" height="24" viewBox="2.5 2.5 19 19" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M17.6 6.31999C16.8669 5.58141 15.9943 4.99596 15.033 4.59767C14.0716 4.19938 13.0406 3.99622 12 3.99999C10.6089 4.00135 9.24248 4.36819 8.03771 5.06377C6.83294 5.75935 5.83208 6.75926 5.13534 7.96335C4.4386 9.16745 4.07046 10.5335 4.06776 11.9246C4.06507 13.3158 4.42793 14.6832 5.12 15.89L4 20L8.2 18.9C9.35975 19.5452 10.6629 19.8891 11.99 19.9C14.0997 19.9001 16.124 19.0668 17.6222 17.5816C19.1205 16.0965 19.9715 14.0796 19.99 11.97C19.983 10.9173 19.7682 9.87634 19.3581 8.9068C18.948 7.93725 18.3505 7.05819 17.6 6.31999ZM12 18.53C10.8177 18.5308 9.65701 18.213 8.64 17.61L8.4 17.46L5.91 18.12L6.57 15.69L6.41 15.44C5.55925 14.0667 5.24174 12.429 5.51762 10.8372C5.7935 9.24545 6.64361 7.81015 7.9069 6.80322C9.1702 5.79628 10.7589 5.28765 12.3721 5.37368C13.9853 5.4597 15.511 6.13441 16.66 7.26999C17.916 8.49818 18.635 10.1735 18.66 11.93C18.6442 13.6859 17.9355 15.3645 16.6882 16.6006C15.441 17.8366 13.756 18.5301 12 18.53ZM15.61 13.59C15.41 13.49 14.44 13.01 14.26 12.95C14.08 12.89 13.94 12.85 13.81 13.05C13.6144 13.3181 13.404 13.5751 13.18 13.82C13.07 13.96 12.95 13.97 12.75 13.82C11.6097 13.3694 10.6597 12.5394 10.06 11.47C9.85 11.12 10.26 11.14 10.64 10.39C10.6681 10.3359 10.6827 10.2759 10.6827 10.215C10.6827 10.1541 10.6681 10.0941 10.64 10.04C10.64 9.93999 10.19 8.95999 10.03 8.56999C9.87 8.17999 9.71 8.23999 9.58 8.22999H9.19C9.08895 8.23154 8.9894 8.25465 8.898 8.29776C8.8066 8.34087 8.72546 8.403 8.66 8.47999C8.43562 8.69817 8.26061 8.96191 8.14676 9.25343C8.03291 9.54495 7.98287 9.85749 8 10.17C8.0627 10.9181 8.34443 11.6311 8.81 12.22C9.6622 13.4958 10.8301 14.5293 12.2 15.22C12.9185 15.6394 13.7535 15.8148 14.58 15.72C14.8552 15.6654 15.1159 15.5535 15.345 15.3915C15.5742 15.2296 15.7667 15.0212 15.91 14.78C16.0428 14.4856 16.0846 14.1583 16.03 13.84C15.94 13.74 15.81 13.69 15.61 13.59Z"
-                                    fill="currentColor" />
-                            </svg>
-                        </a>
-                    </div>
                 </div>
 
                 <div>
@@ -603,6 +640,52 @@
     <script>
         lucide.createIcons();
         document.getElementById("y").textContent = new Date().getFullYear();
+
+        // Mobile Menu Functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+
+        // Scroll Animation Observer (Reveal elements)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px" 
+        });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+        
+        // Immediate reveal check
+        setTimeout(() => {
+            revealElements.forEach(entry => {
+                const rect = entry.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    entry.classList.add('active');
+                }
+            });
+        }, 100);
     </script>
 </body>
 

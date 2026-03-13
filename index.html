@@ -8,7 +8,7 @@
     <meta name="description"
         content="Ajudamos a fazer seu negócio crescer com soluções em TI inovadoras e equipamentos de alta tecnologia.">
 
-    <link rel="shortcut icon" href="/img/favicon.svg" type="image/x-icon">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
@@ -626,24 +626,6 @@
             gap: 16px;
         }
 
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-
         .footer-title {
             font-size: 18px;
             margin-bottom: 24px;
@@ -771,9 +753,17 @@
                 left: 0;
             }
 
-            .hamburger-line:nth-child(1) { top: 0; }
-            .hamburger-line:nth-child(2) { top: 6px; }
-            .hamburger-line:nth-child(3) { top: 12px; }
+            .hamburger-line:nth-child(1) {
+                top: 0;
+            }
+
+            .hamburger-line:nth-child(2) {
+                top: 6px;
+            }
+
+            .hamburger-line:nth-child(3) {
+                top: 12px;
+            }
 
             .mobile-menu-btn.active .hamburger-line:nth-child(1) {
                 transform: translateY(6px) rotate(45deg);
@@ -937,7 +927,8 @@
                 <i data-lucide="zap" style="width: 16px; height: 16px;"></i> Inovação e Excelência
             </div>
             <h1 class="hero-title reveal">A base tecnológica para o futuro do seu negócio.</h1>
-            <p class="hero-desc reveal" style="transition-delay: 100ms;">Câmeras, servidores, desenvolvimento web e suporte técnico premium. Entregamos a
+            <p class="hero-desc reveal" style="transition-delay: 100ms;">Câmeras, servidores, desenvolvimento web e
+                suporte técnico premium. Entregamos a
                 tranquilidade e a eficiência que sua empresa precisa para escalar.</p>
 
             <div class="hero-actions reveal" style="transition-delay: 200ms;">
@@ -1027,32 +1018,37 @@
                     <div class="service-link">Visitar Site <i data-lucide="arrow-right"></i></div>
                 </div>
 
-                <div class="service-card reveal" style="transition-delay: 100ms;" onclick="selectService('Desenvolvimento de Sites')">
+                <div class="service-card reveal" style="transition-delay: 100ms;"
+                    onclick="selectService('Desenvolvimento de Sites')">
                     <div class="service-icon-wrapper"><i data-lucide="monitor-smartphone"></i></div>
                     <h3>Desenvolvimento de Sites</h3>
                     <p>Experiências digitais responsivas, rápidas e projetadas minuciosamente para alta conversão.</p>
                 </div>
 
 
-                <div class="service-card reveal" style="transition-delay: 200ms;" onclick="selectService('Sistemas Corporativos')">
+                <div class="service-card reveal" style="transition-delay: 200ms;"
+                    onclick="selectService('Sistemas Corporativos')">
                     <div class="service-icon-wrapper"><i data-lucide="layout-dashboard"></i></div>
                     <h3>Sistemas Corporativos</h3>
                     <p>Softwares desenvolvidos especificamente para otimizar os seus processos internos.</p>
                 </div>
 
-                <div class="service-card reveal" style="transition-delay: 300ms;" onclick="selectService('Servidores & Câmeras')">
+                <div class="service-card reveal" style="transition-delay: 300ms;"
+                    onclick="selectService('Servidores & Câmeras')">
                     <div class="service-icon-wrapper"><i data-lucide="server"></i></div>
                     <h3>Servidores & Câmeras</h3>
                     <p>Instalação rigorosa de CFTV e arquitetura de servidores de alta confiabilidade.</p>
                 </div>
 
-                <div class="service-card reveal" style="transition-delay: 400ms;" onclick="selectService('Tecnologia Sob Medida')">
+                <div class="service-card reveal" style="transition-delay: 400ms;"
+                    onclick="selectService('Tecnologia Sob Medida')">
                     <div class="service-icon-wrapper"><i data-lucide="code-2"></i></div>
                     <h3>Tecnologia Sob Medida</h3>
                     <p>Softwares desenvolvidos especificamente para desafios de negócio únicos.</p>
                 </div>
 
-                <div class="service-card reveal" style="transition-delay: 500ms;" onclick="selectService('Equipamentos')">
+                <div class="service-card reveal" style="transition-delay: 500ms;"
+                    onclick="selectService('Equipamentos')">
                     <div class="service-icon-wrapper"><i data-lucide="hard-drive"></i></div>
                     <h3>Equipamentos</h3>
                     <p>Fornecimento de hardware premium: computadores corporativos, switches e roteadores.</p>
@@ -1222,14 +1218,14 @@
             });
         }, {
             threshold: 0.1, // Trigger when 10% of element is visible
-            rootMargin: "0px 0px -50px 0px" 
+            rootMargin: "0px 0px -50px 0px"
         });
 
         // Trigger animations
         revealElements.forEach(element => {
             revealObserver.observe(element);
         });
-        
+
         // Ensure hero sections appear immediately if they are in viewport
         setTimeout(() => {
             revealElements.forEach(entry => {
