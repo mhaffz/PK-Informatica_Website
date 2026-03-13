@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - TalkBubble / PK Informática</title>
+    <meta name="robots" content="index,follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --bg-alt: #f8fafc;
+            --bg-soft: #f0f7ff;
+            --bg-muted: #f1f5f9;
+
+            --text-main: #021124;
+            --text-muted: #4b5563;
+            --text-light: #9ca3af;
+
+            --border-color: #e2e8f0;
+
+            --primary: #0f172a;
+            --primary-hover: #1e293b;
+            --primary-light: #e0f2fe;
+
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 32px;
+
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-muted);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-main);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            font-weight: 600;
+            font-size: 15px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 14px 36px;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: var(--bg-alt);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--text-main);
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        footer {
+            background-color: var(--bg-alt);
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand {
+            margin-bottom: 24px;
+        }
+
+        .footer-desc {
+            max-width: 300px;
+            margin-bottom: 32px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .footer-nav a {
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links,
+            .nav-action {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+
+        .page-header {
+            padding-top: 180px;
+            padding-bottom: 60px;
+            background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        .page-header .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 18px;
+            background-color: var(--primary-light);
+            border: 1px solid #bae6fd;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .privacy-content {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .important-box {
+            background-color: #ffffff;
+            border: 1px solid #bae6fd;
+            border-left: 4px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-bottom: 48px;
+            box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.1);
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            margin: 48px 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .privacy-content h2::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 4px;
+        }
+
+        .privacy-content p {
+            margin-bottom: 24px;
+        }
+
+        .privacy-content ul {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .privacy-content li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .privacy-content li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 12px;
+            height: 2px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .privacy-content .muted {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            margin: 24px 0;
+        }
+
+        .privacy-content a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .privacy-content a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .date-update {
+            font-weight: 600;
+            color: var(--text-muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="/index.html" class="brand">PK Informática</a>
+
+            <ul class="nav-links">
+                <li><a href="/index.html#services">Serviços</a></li>
+                <li><a href="/index.html#about">Sobre a Empresa</a></li>
+                <li><a href="/index.html#contact">Contato</a></li>
+            </ul>
+
+            <div class="nav-action">
+                <a href="/index.html#contact" class="btn btn-primary" style="padding: 10px 24px;">Fale Conosco</a>
+            </div>
+
+            <button class="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="pill">TalkBubble</span>
+            <h1>Política de Privacidade</h1>
+            <div class="date-update">
+                <i data-lucide="calendar" style="width: 18px;"></i>
+                Última atualização: 15/01/2026
+            </div>
+            <p style="max-width: 600px; margin: 24px auto 0; font-size: 1.15rem; color: var(--text-muted);">
+                Como tratamos as informações necessárias para fornecer uma plataforma de comunicação corporativa
+                integrada ao WhatsApp.
+            </p>
+        </div>
+    </div>
+
+    <main class="privacy-content">
+        <div class="container" style="max-width: 800px; padding: 0 20px;">
+            <div class="important-box">
+                <p style="margin-bottom: 0;">
+                    <i data-lucide="info"
+                        style="width: 20px; vertical-align: middle; margin-right: 8px; color: var(--accent);"></i>
+                    <strong>Importante:</strong> o TalkBubble é fornecido de forma que <strong>cada Cliente
+                        (empresa/organização contratante) possui seu próprio ambiente e seu próprio banco de
+                        dados</strong>.
+                    O Cliente é o <strong>Controlador</strong> dos dados do seu ambiente. Nós atuamos como
+                    <strong>Operador</strong> (administração técnica da infraestrutura), sem acesso normal ao conteúdo
+                    das conversas.
+                </p>
+            </div>
+
+            <h2>1) Quem opera o TalkBubble</h2>
+            <p>
+                O TalkBubble é operado por <strong>P H M FRANCO</strong>, inscrito no <strong>CNPJ
+                    40.093.946/0001-64</strong>.
+            </p>
+            <p>
+                <strong>Contato:</strong> <a href="mailto:contato@pkinformatica.com">contato@pkinformatica.com</a>
+            </p>
+
+            <h2>2) Estrutura do serviço e responsabilidades</h2>
+            <p>
+                O TalkBubble é disponibilizado no modelo em que cada Cliente possui um ambiente independente (instância)
+                e um banco de dados próprio.
+                Assim, o <strong>Cliente é o responsável (Controlador)</strong> pelos dados pessoais tratados naquele
+                ambiente.
+            </p>
+            <p>
+                A <strong>P H M FRANCO</strong> atua como <strong>fornecedora e administradora técnica</strong> do
+                ambiente, com foco em disponibilidade,
+                manutenção, atualizações e suporte operacional da infraestrutura.
+            </p>
+
+            <h2>3) Quais dados o TalkBubble trata</h2>
+            <p>Para viabilizar a integração e o atendimento via API Oficial do WhatsApp, o TalkBubble trata, dentro do
+                ambiente do Cliente, os seguintes dados:</p>
+            <ul>
+                <li><strong>Dados de contato do WhatsApp:</strong> Números de telefone, nomes de perfil do WhatsApp e
+                    fotos de perfil dos contatos que interagem com a empresa.</li>
+                <li><strong>Dados de conta e perfil:</strong> nome, e-mail e identificador interno do usuário
+                    (atendente/funcionário do Cliente).</li>
+                <li><strong>Conteúdo do usuário (chat):</strong> mensagens de texto, arquivos e mídias compartilhadas no
+                    ambiente do Cliente oriundas ou enviadas para o WhatsApp.</li>
+                <li><strong>Áudio:</strong> quando o usuário grava e envia <strong>mensagens de voz</strong>.</li>
+                <li><strong>Dados técnicos mínimos:</strong> informações de sessão/autenticação e registros técnicos
+                    essenciais à segurança e funcionamento do serviço.</li>
+            </ul>
+            <p class="muted">
+                O TalkBubble não tem como objetivo coletar e centralizar dados dos Clientes em um banco único do
+                operador. O conteúdo permanece isolado no ambiente do próprio Cliente.
+            </p>
+
+            <h2>4) Acesso a conversas e integração</h2>
+            <ul>
+                <li>O serviço do TalkBubble atua como uma ponte técnica entre o Cliente e a <strong>API do WhatsApp
+                        (Meta)</strong>.</li>
+                <li>O TalkBubble <strong>não mantém um repositório central</strong> com o conteúdo de conversas de todos
+                    os Clientes.</li>
+                <li>As mensagens trafegadas são criptografadas em trânsito entre o nosso servidor e os servidores da
+                    Meta (WhatsApp).</li>
+                <li><strong>Por padrão</strong>, o administrador do ambiente do Cliente gerencia as permissões de quem
+                    pode visualizar os atendimentos conforme sua própria política interna.</li>
+            </ul>
+
+            <h2>5) Permissões do aplicativo móvel</h2>
+            <p>O TalkBubble pode solicitar permissões do dispositivo móvel do atendente apenas para recursos
+                específicos:</p>
+            <ul>
+                <li><strong>Câmera:</strong> necessário para enviar fotos ou mensagens de vídeo.</li>
+                <li><strong>Microfone:</strong> necessário para gravar mensagens de voz.</li>
+                <li><strong>Fotos/Arquivos:</strong> para anexar mídias e documentos em conversas.</li>
+                <li><strong>Notificações:</strong> para alertas de novas mensagens de clientes.</li>
+            </ul>
+
+            <h2>6) Finalidades do tratamento</h2>
+            <p>Os dados são tratados exclusivamente para:</p>
+            <ul>
+                <li>Operar a integração de mensagens com o WhatsApp Business;</li>
+                <li>Permitir a comunicação entre a empresa (Cliente) e seus consumidores finais;</li>
+                <li>Garantir segurança e integridade do ambiente;</li>
+                <li>Suporte técnico e manutenção do ambiente, quando solicitado.</li>
+            </ul>
+            <p><strong>O TalkBubble não utiliza dados para rastreamento (tracking) e não vende nenhuma informação
+                    pessoal ou lista de contatos.</strong></p>
+
+            <h2>7) Compartilhamento</h2>
+            <ul>
+                <li>O TalkBubble <strong>não vende dados pessoais</strong>.</li>
+                <li>O tratamento ocorre no ambiente do Cliente e envolve o compartilhamento automático de dados de
+                    mensagens com a infraestrutura da Meta (WhatsApp).</li>
+                <li>Poderá haver compartilhamento com autoridades competentes quando exigido por obrigação legal ou
+                    ordem judicial válida.</li>
+            </ul>
+
+            <h2>8) Retenção e exclusão</h2>
+            <p>
+                A retenção de mensagens, contatos de WhatsApp, arquivos e dados de conta é definida pelo <strong>Cliente
+                    (empresa contratante)</strong>, responsável pelo ambiente e banco de dados.
+            </p>
+
+            <h2>9) Direitos do titular (LGPD)</h2>
+            <p>
+                Como o Cliente (a empresa com a qual você conversou) é o Controlador dos dados, pedidos relacionados a
+                acesso, correção, eliminação de número de telefone, exclusão de histórico de conversas, portabilidade e
+                demais direitos devem ser direcionados diretamente à empresa de atendimento.
+            </p>
+
+            <h2>10) Contato</h2>
+            <p>
+                Para dúvidas sobre privacidade, segurança de dados ou questões técnicas relacionadas ao TalkBubble,
+                entre em contato através do e-mail:
+                <a href="mailto:contato@pkinformatica.com">contato@pkinformatica.com</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand brand">PK Informática</div>
+                    <p class="footer-desc">Infraestrutura digital e hardware corporativo alinhados para o máximo de
+                        performance.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-lucide="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-lucide="instagram"></i></a>
+                        <a href="https://wa.me/5569992310257" target="_blank" class="social-link" title="WhatsApp">
+                            <svg width="24" height="24" viewBox="2.5 2.5 19 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17.6 6.31999C16.8669 5.58141 15.9943 4.99596 15.033 4.59767C14.0716 4.19938 13.0406 3.99622 12 3.99999C10.6089 4.00135 9.24248 4.36819 8.03771 5.06377C6.83294 5.75935 5.83208 6.75926 5.13534 7.96335C4.4386 9.16745 4.07046 10.5335 4.06776 11.9246C4.06507 13.3158 4.42793 14.6832 5.12 15.89L4 20L8.2 18.9C9.35975 19.5452 10.6629 19.8891 11.99 19.9C14.0997 19.9001 16.124 19.0668 17.6222 17.5816C19.1205 16.0965 19.9715 14.0796 19.99 11.97C19.983 10.9173 19.7682 9.87634 19.3581 8.9068C18.948 7.93725 18.3505 7.05819 17.6 6.31999ZM12 18.53C10.8177 18.5308 9.65701 18.213 8.64 17.61L8.4 17.46L5.91 18.12L6.57 15.69L6.41 15.44C5.55925 14.0667 5.24174 12.429 5.51762 10.8372C5.7935 9.24545 6.64361 7.81015 7.9069 6.80322C9.1702 5.79628 10.7589 5.28765 12.3721 5.37368C13.9853 5.4597 15.511 6.13441 16.66 7.26999C17.916 8.49818 18.635 10.1735 18.66 11.93C18.6442 13.6859 17.9355 15.3645 16.6882 16.6006C15.441 17.8366 13.756 18.5301 12 18.53ZM15.61 13.59C15.41 13.49 14.44 13.01 14.26 12.95C14.08 12.89 13.94 12.85 13.81 13.05C13.6144 13.3181 13.404 13.5751 13.18 13.82C13.07 13.96 12.95 13.97 12.75 13.82C11.6097 13.3694 10.6597 12.5394 10.06 11.47C9.85 11.12 10.26 11.14 10.64 10.39C10.6681 10.3359 10.6827 10.2759 10.6827 10.215C10.6827 10.1541 10.6681 10.0941 10.64 10.04C10.64 9.93999 10.19 8.95999 10.03 8.56999C9.87 8.17999 9.71 8.23999 9.58 8.22999H9.19C9.08895 8.23154 8.9894 8.25465 8.898 8.29776C8.8066 8.34087 8.72546 8.403 8.66 8.47999C8.43562 8.69817 8.26061 8.96191 8.14676 9.25343C8.03291 9.54495 7.98287 9.85749 8 10.17C8.0627 10.9181 8.34443 11.6311 8.81 12.22C9.6622 13.4958 10.8301 14.5293 12.2 15.22C12.9185 15.6394 13.7535 15.8148 14.58 15.72C14.8552 15.6654 15.1159 15.5535 15.345 15.3915C15.5742 15.2296 15.7667 15.0212 15.91 14.78C16.0428 14.4856 16.0846 14.1583 16.03 13.84C15.94 13.74 15.81 13.69 15.61 13.59Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Serviços</h4>
+                    <ul class="footer-nav">
+                        <li><a href="/index.html#services">Desenvolvimento</a></li>
+                        <li><a href="/index.html#services">Servidores e Redes</a></li>
+                        <li><a href="https://www.talkbubble.com.br">Talkbubble App</a></li>
+                        <li><a href="/index.html#services">Equipamentos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">A Empresa</h4>
+                    <ul class="footer-nav">
+                        <li><a href="/index.html#about">Sobre nós</a></li>
+                        <li><a href="/index.html#contact">Fale Conosco</a></li>
+                        <li><a href="/privacidade.html">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="y">2026</span> PK Informática. Todos os direitos reservados. 40.093.946/0001-64</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
